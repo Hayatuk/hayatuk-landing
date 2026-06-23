@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Notice — Hayatuk</title>
+  <meta name="description" content="How Hayatuk handles your personal data, including location, contact details, and blood type." />
+  <style>
+    :root { --orange:#e8562f; --ink:#1a1a1a; --muted:#5c6670; --border:#ececec; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);line-height:1.65}
+    a{color:var(--orange)}
+    header{border-bottom:1px solid var(--border)}
+    .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+    .nav{height:60px;display:flex;align-items:center;font-weight:800;font-size:1.15rem}
+    .nav a{color:var(--ink);text-decoration:none}
+    main{padding:48px 0}
+    h1{font-size:2rem;margin:0 0 6px}
+    .updated{color:var(--muted);margin:0 0 28px}
+    h2{margin:34px 0 10px;font-size:1.3rem}
+    table{border-collapse:collapse;width:100%;margin:14px 0}
+    th,td{border:1px solid var(--border);padding:10px 12px;text-align:left;vertical-align:top;font-size:.96rem}
+    th{background:#fdf1ec}
+    footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header><div class="wrap nav"><a href="index.html">← Hayatuk</a></div></header>
+  <main>
+    <div class="wrap">
+      <h1>Privacy Notice</h1>
+      <p class="updated">How Hayatuk handles your personal and sensitive data.</p>
+
+      <p>Hayatuk handles personal and sensitive data (contact details, blood type, and location). This notice describes how the app treats that data. Organizations that deploy Hayatuk are responsible for their own privacy policy and for the behavior of their backend.</p>
+
+      <h2>What we collect and why</h2>
+      <table>
+        <thead><tr><th>Data</th><th>Why</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Name, email, phone</td><td>Account, and letting a requester and donor coordinate</td><td>Phone is shown to the other party only after a request is accepted</td></tr>
+          <tr><td>Blood type</td><td>Matching donors to requests</td><td>Health-related data</td></tr>
+          <tr><td>Approximate location</td><td>Finding nearby requests and showing them on the map</td><td>Coarsened before leaving the device (see below)</td></tr>
+          <tr><td>Push (FCM) token</td><td>Notifying you about relevant requests</td><td></td></tr>
+        </tbody>
+      </table>
+
+      <h2>Location privacy</h2>
+      <p>Your device’s exact GPS coordinate is never sent to the server. Before any network call, coordinates are snapped to a coarse grid, so the backend only ever stores an approximate area, not a precise position. The exact coordinate is used only locally, to center the map. Location permission is requested at the point of use, and the app works even if it is denied — you simply won’t see nearby results.</p>
+
+      <h2>Data sharing</h2>
+      <p>The app talks only to its backend and to Firebase (for push notifications). It contains no third-party analytics or advertising SDKs. A requester’s and an accepting donor’s phone numbers are exchanged only after an explicit acceptance, so they can coordinate the donation.</p>
+
+      <h2>Your control</h2>
+      <p>You can disable donor mode at any time to stop receiving requests, and you can delete your account and data at any time. See <a href="account-deletion.html">Delete your account</a>.</p>
+
+      <h2>Contact</h2>
+      <p>For any privacy or security concern, email <a href="mailto:contact@hayatuk.org">contact@hayatuk.org</a>.</p>
+    </div>
+  </main>
+  <footer><div class="wrap">© <span id="yr">2026</span> Hayatuk · <a href="index.html">Home</a> · <a href="account-deletion.html">Delete account</a></div></footer>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
